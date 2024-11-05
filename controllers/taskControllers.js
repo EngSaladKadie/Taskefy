@@ -3,11 +3,11 @@ const { readTasksFromFile, writeTasksToFile } = require("../utils/fileHandler");
 const { copyFileSync } = require('fs');
 const path = require('path');
 
-// exports.getTasks = (req, res) => {
-//     const tasks = readTasksFromFile();
-//     res.writeHead(200, { 'content-type': 'application/json'})
-//     res.end(JSON.stringify(tasks))
-// }
+exports.getTasks = (req, res) => {
+    const tasks = readTasksFromFile();
+    res.writeHead(200, { 'content-type': 'application/json'})
+    res.end(JSON.stringify(tasks))
+}
 
 // exports.createTask = (req, res) => {
 //     const form = new IncomingForm();
