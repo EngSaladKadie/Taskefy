@@ -53,16 +53,16 @@ exports.createTask = (req, res) => {
     })
 }
 
-// exports.updateTask = (req, res) => {
-//     const form = new IncomingForm();
-//     form.parse(req, (err, fields, files) => {
-//         if(err) {
-//             res.writeHead(400, { 'content-type': 'application/json'});
-//             res.end(JSON.stringify({
-//                 message: 'Error parsing form'
-//             }))
-//             return;
-//         }
+exports.updateTask = (req, res) => {
+    const form = new IncomingForm();
+    form.parse(req, (err, fields, files) => {
+        if(err) {
+            res.writeHead(400, { 'content-type': 'application/json'});
+            res.end(JSON.stringify({
+                message: 'Error parsing form'
+            }))
+            return;
+        }
 
 //         if (!fields.title) {
 //             res.writeHead(400, { 'content-type': 'application/json'});
