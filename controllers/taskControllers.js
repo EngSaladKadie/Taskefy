@@ -20,38 +20,38 @@ exports.createTask = (req, res) => {
             return;
         }
 
-//         if (!fields.title) {
-//             res.writeHead(400, { 'content-type': 'application/json'});
-//             res.end(JSON.stringify({
-//                 message: 'Title is required'
-//             }))
-//             return;
-//         }
+        if (!fields.title) {
+            res.writeHead(400, { 'content-type': 'application/json'});
+            res.end(JSON.stringify({
+                message: 'Title is required'
+            }))
+            return;
+        }
 
-//         const image = files.image ? files.image[0] : null;
+        const image = files.image ? files.image[0] : null;
 
-//         const tasks = readTasksFromFile()
+        const tasks = readTasksFromFile()
 
-//         const newTask = {
-//             id: Date.now(),
-//             title: fields.title,
-//             description: fields?.description || '',
-//             status: fields?.status || 'pending',
-//             image: image ? `/uploads/${image.originalFilename}` : null,
-//         }
+        const newTask = {
+            id: Date.now(),
+            title: fields.title,
+            description: fields?.description || '',
+            status: fields?.status || 'pending',
+            image: image ? `/uploads/${image.originalFilename}` : null,
+        }
 
-//         tasks.push(newTask);
+        tasks.push(newTask);
 
-//         writeTasksToFile(tasks);
+        writeTasksToFile(tasks);
 
-//         if(image) {
-//             copyFileSync(image.filepath, path.join(__dirname, '../uploads', image.originalFilename));
-//         }
+        if(image) {
+            copyFileSync(image.filepath, path.join(__dirname, '../uploads', image.originalFilename));
+        }
 
-//         res.writeHead(200, { 'content-type': 'application/json'});
-//         res.end(JSON.stringify(newTask))
-//     })
-// }
+        res.writeHead(200, { 'content-type': 'application/json'});
+        res.end(JSON.stringify(newTask))
+    })
+}
 
 // exports.updateTask = (req, res) => {
 //     const form = new IncomingForm();
